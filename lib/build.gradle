@@ -33,7 +33,7 @@ dependencies {
     implementation 'joda-time:joda-time:2.10.11'
 }
 
-tasks.named('test') {
+test {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
