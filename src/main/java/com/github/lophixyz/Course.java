@@ -13,8 +13,8 @@ public class Course {
 
   public Course(String name, DateTime startDate, DateTime endDate) {
     this.name = name;
-    this.modules = new ArrayList<Module>();
-    this.students = new ArrayList<Student>();
+    this.modules = new ArrayList<>();
+    this.students = new ArrayList<>();
     this.startDate = startDate;
     this.endDate = endDate;
   }
@@ -53,6 +53,7 @@ public class Course {
 
   public void registerStudent(Student student) {
     students.add(student);
+    student.setCourse(this);
   }
 
   public void unregisterStudent(Student student) {
@@ -65,13 +66,18 @@ public class Course {
 
   public void addModule(Module module) {
     modules.add(module);
+    module.addCourse(this);
   }
 
   public void removeModule(Module module) {
     modules.add(module);
+    module.removeCourse(this);
   }
 
   public void removeAllModules() {
+    for (Module module: modules) {
+      module.removeCourse(this);
+    }
     modules.clear();
   }
 }
