@@ -1,6 +1,5 @@
 package com.github.lophixyz;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 import org.joda.time.DateTime;
