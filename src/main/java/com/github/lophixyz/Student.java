@@ -11,7 +11,7 @@ public class Student {
   private String username;
   private int age;
   private DateTime dob;
-  private ArrayList<Module> modules;
+  private final ArrayList<Module> modules;
   private Course course;
 
   public Student(String firstName, String lastName, int age, DateTime dob) {
@@ -21,7 +21,7 @@ public class Student {
     this.username = generateUsername(firstName, lastName, age);
     this.age = age;
     this.dob = dob;
-    this.modules = new ArrayList<Module>();
+    this.modules = new ArrayList<>();
   }
   public long getStudentID() {
     return studentID;

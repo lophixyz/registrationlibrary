@@ -6,8 +6,8 @@ import org.joda.time.DateTime;
 
 public class Course {
   private String name;
-  private ArrayList<Module> modules;
-  private ArrayList<Student> students;
+  private final ArrayList<Module> modules;
+  private final ArrayList<Student> students;
   private DateTime startDate;
   private DateTime endDate;
 

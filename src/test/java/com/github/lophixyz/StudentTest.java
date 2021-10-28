@@ -1,6 +1,9 @@
 package com.github.lophixyz;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.joda.time.DateTime;
 import org.junit.jupiter.api.Test;
@@ -9,8 +12,9 @@ class StudentTest {
 
   @Test
   void getUsername() {
-    Course course = new Course("Software Engineering III", DateTime.parse("2021-08-28"),DateTime.parse("2022-08-27"));
-    Student student = new Student( "John", "Smith", 22, DateTime.parse("1999-01-01"));
+    Course course = new Course("Software Engineering III", DateTime.parse("2021-08-28"),
+        DateTime.parse("2022-08-27"));
+    Student student = new Student("John", "Smith", 22, DateTime.parse("1999-01-01"));
     course.registerStudent(student);
     student.setCourse(course);
     String wantUsername = "johnsmith22";
