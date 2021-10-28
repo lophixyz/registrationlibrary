@@ -66,18 +66,13 @@ public class Course {
 
   public void addModule(Module module) {
     modules.add(module);
-    module.addCourse(this);
   }
 
   public void removeModule(Module module) {
-    modules.add(module);
-    module.removeCourse(this);
+    modules.remove(module);
   }
 
   public void removeAllModules() {
-    for (Module module: modules) {
-      module.removeCourse(this);
-    }
     modules.clear();
   }
 }

@@ -8,6 +8,7 @@ public class Student {
   private final long studentID;
   private String firstName;
   private String lastName;
+  private String username;
   private int age;
   private DateTime dob;
   private ArrayList<Module> modules;
@@ -17,6 +18,7 @@ public class Student {
     this.studentID = id++;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.username = generateUsername(firstName, lastName, age);
     this.age = age;
     this.dob = dob;
     this.modules = new ArrayList<Module>();
@@ -61,6 +63,7 @@ public class Student {
     return modules;
   }
 
+
   public void addModule(Module module) {
     this.modules.add(module);
   }
@@ -81,9 +84,16 @@ public class Student {
     this.course = course;
   }
 
-  // getUsername returns a username based on the user's name and age.
-  // Converts all letters in name to lower case and concatenates with age.
   public String getUsername() {
+    if (username.isEmpty()) {
+      username = generateUsername(firstName, lastName, age);
+    }
+    return username;
+  }
+
+  // generateUsername returns a username based on the user's name and age.
+  // Converts all letters in name to lower case and concatenates with age.
+  public String generateUsername(String firstName, String lastName, int age) {
     String username = firstName + lastName;
     username = username.toLowerCase() + age;
     return username;

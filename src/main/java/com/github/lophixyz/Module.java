@@ -3,7 +3,6 @@ package com.github.lophixyz;
 import java.util.ArrayList;
 
 public class Module {
-
   private final String id;
   private final String name;
   private final ArrayList<Student> students;
@@ -29,20 +28,19 @@ public class Module {
   }
 
   public void registerStudent(Student student) {
-    students.add(student);
-    student.addModule(this);
+    this.students.add(student);
   }
 
   public void unregisterStudent(Student student) {
-    students.remove(student);
-    student.removeModule(this);
+    this.students.remove(student);
   }
 
   public void unregisterAllStudents() {
-    for (Student student : students) {
-      student.removeModule(this);
-    }
     students.clear();
+  }
+
+  public boolean isRegistered(Student student) {
+    return students.contains(student);
   }
 
   public void addCourse(Course course) {
