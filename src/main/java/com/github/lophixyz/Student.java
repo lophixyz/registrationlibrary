@@ -63,7 +63,6 @@ public class Student {
     return modules;
   }
 
-
   public void addModule(Module module) {
     this.modules.add(module);
   }
