@@ -5,9 +5,10 @@ import java.util.List;
 import org.joda.time.DateTime;
 
 public class Course {
-  private String name;
+
   private final ArrayList<Module> modules;
   private final ArrayList<Student> students;
+  private String name;
   private DateTime startDate;
   private DateTime endDate;
 
@@ -53,7 +54,6 @@ public class Course {
 
   public void registerStudent(Student student) {
     students.add(student);
-    student.setCourse(this);
   }
 
   public void unregisterStudent(Student student) {

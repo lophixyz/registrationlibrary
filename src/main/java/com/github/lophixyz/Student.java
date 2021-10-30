@@ -95,6 +95,7 @@ public class Student {
   // Converts all letters in name to lower case and concatenates with age.
   public String generateUsername(String firstName, String lastName, int age) {
     String username = firstName + lastName;
+    username = username.replace(" ", "");
     username = username.toLowerCase() + age;
     return username;
   }
